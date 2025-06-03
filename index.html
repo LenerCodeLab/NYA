@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¿Quieres ser mi señorita enamorada?</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button onclick="iniciarMusica()">Iniciar música</button>
+    <div class="card" id="pregunta">
+      <h1>¿Quieres ser mi señorita enamorada?</h1>
+      <p>
+        <strong
+          >Desde hace un tiempo, hay algo que siento en mi corazón y quiero
+          compartir contigo...</strong
+        ><br /><br />
+        No fue casualidad conocerte. Estoy convencido de que Dios pone en
+        nuestro camino a personas especiales, y tú has sido una de ellas.<br /><br />
+        Tu forma de ser, tu luz, tu alegría... han tocado mi vida de una manera
+        única.<br /><br />
+        A veces le pido a Dios que me guíe, y últimamente siento que su
+        respuesta tiene tu nombre.<br /><br />
+        Me encantaría construir algo bonito a tu lado, con Dios como centro de
+        lo que podríamos ser.<br /><br />
+        No busco perfección, solo sinceridad, cariño y fe compartida.<br /><br />
+        Así que, con todo mi corazón y mucha ilusión te pregunto:<br /><br />
+        <strong>¿Quieres ser mi enamorada?</strong> ✨💖<br /><br />
+        Y si Dios lo permite… que esta historia sea la más bonita que vivamos
+        juntos.
+      </p>
+      <div class="buttons">
+        <button class="no" id="btnNo">No</button>
+        <button class="yes" id="btnSi">Sí</button>
+      </div>
+      <button class="play" id="btnPlay">🎵 Reprodúcelo amor</button>
+      <audio id="miAudio" src="audio.mp3"></audio>
+      <div class="alina">ALINA</div>
+    </div>
+
+    <div class="card final" id="respuesta">
+      <h1>¡SABÍA QUE ACEPTARÍAS!</h1>
+      <div class="emoji">💖💍</div>
+      <p>
+        Gracias por darme este pequeño gran sí...<br /><br />
+        No imaginas lo feliz que me haces con tu respuesta. Desde que entraste
+        en mi vida, he sentido que Dios me puso frente a alguien única, valiosa
+        y maravillosa. <br /><br />
+        Hoy empieza algo nuevo, algo que no será perfecto, pero sí verdadero.
+        Quiero acompañarte, hacerte reír, cuidarte, y sobre todo, amarte con
+        todo mi corazón.<br /><br />
+        Estoy emocionado por todo lo que viviremos juntos, por cada detalle,
+        cada momento, y cada abrazo que vendrá.<br /><br />
+        Prepárate... porque esto recién comienza y te prometo hacerlo hermoso,
+        con amor, fe y mucho cariño. 💌
+      </p>
+      <div class="emoji">💘</div>
+      <button class="send" id="btnEnviarWhatsapp">Enviar respuesta</button>
+      <div class="alina">ALINA</div>
+    </div>
+    <!-- Música de fondo -->
+    <audio id="musica" autoplay muted hidden></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
