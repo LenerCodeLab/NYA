@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Varela Round", "Quicksand", sans-serif;
+    background: #000;
+    margin: 0;
+    min-height: 100svh;
+    /* alto útil en móviles */
+    display: grid;
+    place-items: start center;
+    padding: clamp(16px, 4vw, 40px);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
+.background-video {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.wrap {
+    width: min(92vw, 1000px);
+}
+
+h1 {
+    text-align: center;
+    font-size: clamp(2rem, 6vw, 4.5rem);
+    color: #fdfdfd;
+    margin: 0 0 clamp(12px, 3vw, 24px);
+}
+
+/* Tarjeta */
+.postcard {
+    position: relative;
+    width: min(92vw, 800px);
+    /* se adapta al ancho de pantalla */
+    padding: clamp(16px, 4vw, 48px);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    transform: rotate(2.5deg);
+    transition: transform .5s ease;
+    margin-inline: auto;
+}
+
+/* Fondo rosado “sombra” que sigue el tamaño de la tarjeta */
+.postcard::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* mismo tamaño que la tarjeta */
+    border-radius: inherit;
+    background: #f594b862;
+    filter: blur(2px);
+    transform: translate(10px, 10px) rotate(2.5deg);
+    z-index: -1;
+    /* detrás de la tarjeta */
+    box-shadow: 0.8em 0.8em 15px rgba(0, 0, 0, .3);
+}
+
+/* Animación como la tuya */
+.postcard:hover,
+.postcard:focus {
+    transform: rotate(0deg);
+}
+
+/* Texto */
+p {
+    margin: 0;
+    max-width: 65ch;
+    /* ancho ideal de lectura */
+    font-size: clamp(1rem, 2.3vw, 1.375rem);
+    /* 16px–22px aprox */
+    line-height: 1.7;
+    color: #111;
+    word-break: break-word;
+}
+
+p span {
+    font-size: clamp(1.25rem, 3vw, 1.875rem);
+    font-weight: 700;
+    text-shadow: 0 0 20px rgba(255, 255, 255, .7);
+    color: #800020;
+}
+
+.ullu {
+    font-size: clamp(1.1rem, 2.6vw, 1.5rem);
+}
+
+/* Ajustes en pantallas pequeñas */
+@media (max-width: 700px) {
+    .postcard {
+        transform: none;
+    }
+
+    /* evitar rotación en móviles si molesta */
+}
