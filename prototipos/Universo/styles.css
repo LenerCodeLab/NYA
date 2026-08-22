@@ -1,0 +1,234 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  color: #fff;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(252, 117, 171, 0.24), transparent 32%),
+    radial-gradient(circle at 15% 80%, rgba(84, 183, 255, 0.18), transparent 28%),
+    linear-gradient(135deg, #070714 0%, #15091c 45%, #040713 100%);
+}
+
+button {
+  font: inherit;
+}
+
+.universe-shell {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 560px;
+  isolation: isolate;
+}
+
+#universe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  touch-action: none;
+}
+
+#universe:active {
+  cursor: grabbing;
+}
+
+.intro {
+  position: absolute;
+  top: clamp(22px, 6vw, 58px);
+  left: clamp(20px, 6vw, 72px);
+  z-index: 2;
+  width: min(480px, calc(100vw - 40px));
+  pointer-events: none;
+  text-shadow: 0 10px 32px rgba(0, 0, 0, 0.75);
+}
+
+.kicker {
+  margin: 0 0 10px;
+  color: #ffd8e7;
+  font-size: clamp(0.82rem, 1.8vw, 0.98rem);
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.25rem, 6vw, 5.6rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.intro p:last-child {
+  max-width: 420px;
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(1rem, 2vw, 1.16rem);
+  line-height: 1.55;
+}
+
+.controls {
+  position: absolute;
+  right: clamp(14px, 4vw, 34px);
+  bottom: clamp(18px, 4vw, 34px);
+  z-index: 3;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(9, 8, 22, 0.62);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.36);
+  backdrop-filter: blur(14px);
+}
+
+.controls button {
+  min-width: 44px;
+  height: 42px;
+  border: 0;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.16);
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.controls button:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 110, 169, 0.36);
+}
+
+#toggleSpin,
+#resetView {
+  min-width: 74px;
+  padding: 0 14px;
+}
+
+.hint {
+  position: absolute;
+  left: clamp(16px, 5vw, 42px);
+  bottom: clamp(24px, 5vw, 44px);
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.94rem;
+  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.8);
+}
+
+.love-label {
+  position: absolute;
+  z-index: 4;
+  max-width: 184px;
+  padding: 7px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.44);
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 900;
+  font-size: 13px;
+  line-height: 1.12;
+  text-align: center;
+  white-space: normal;
+  background: rgba(22, 8, 24, 0.78);
+  box-shadow: 0 10px 34px rgba(255, 82, 143, 0.38);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.love-photo {
+  position: absolute;
+  z-index: 4;
+  width: 58px;
+  height: 58px;
+  border: 3px solid rgba(255, 255, 255, 0.86);
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 12px 36px rgba(255, 100, 166, 0.42);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.love-symbol {
+  position: absolute;
+  z-index: 3;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.82);
+}
+
+.heart-symbol {
+  color: #ff78aa;
+  background: rgba(255, 80, 142, 0.15);
+  box-shadow: 0 0 22px rgba(255, 82, 143, 0.38);
+}
+
+.rose-symbol {
+  color: #ffd1df;
+  background: rgba(255, 177, 204, 0.14);
+  box-shadow: 0 0 22px rgba(255, 198, 218, 0.3);
+}
+
+@media (max-width: 680px) {
+  .universe-shell {
+    min-height: 620px;
+  }
+
+  .intro {
+    width: calc(100vw - 32px);
+  }
+
+  .intro p:last-child {
+    max-width: 310px;
+  }
+
+  .controls {
+    right: 12px;
+    left: 12px;
+    justify-content: center;
+  }
+
+  .hint {
+    bottom: 82px;
+    left: 16px;
+    right: 16px;
+    text-align: center;
+  }
+
+  .love-label {
+    font-size: 10px;
+    max-width: 112px;
+    padding: 5px 8px;
+  }
+
+  .love-photo {
+    width: 42px;
+    height: 42px;
+    border-width: 2px;
+  }
+
+  .love-symbol {
+    width: 24px;
+    height: 24px;
+    font-size: 17px;
+  }
+}

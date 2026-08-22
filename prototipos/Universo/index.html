@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Universo romantico</title>
+  <link rel="icon" href="../../img/flowers.png" type="image/x-icon" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main class="universe-shell">
+    <canvas id="universe"></canvas>
+
+    <section class="intro" aria-label="Mensaje principal">
+      <p class="kicker">Nuestro pequeño infinito</p>
+      <h1>Yenni, mi universo eres tú</h1>
+      <p>Cada estrella guarda una palabra, una mirada y un pedacito de todo lo bonito que siento por ti.</p>
+    </section>
+
+    <div class="controls" aria-label="Controles del universo">
+      <button id="zoomIn" type="button" title="Acercar">+</button>
+      <button id="zoomOut" type="button" title="Alejar">-</button>
+      <button id="toggleSpin" type="button" title="Pausar o continuar giro">Pausar</button>
+      <button id="resetView" type="button" title="Volver al centro">Centro</button>
+    </div>
+
+    <div class="hint" aria-hidden="true">Arrastra para mover el universo</div>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
